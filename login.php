@@ -10,69 +10,6 @@ if (isset($_SESSION['email'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta https-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="file:///C:/Users/HP/Desktop/Capture.PNG">
-    <link rel="stylesheet" href="i.css">
-    <title>MoTaha •Login•</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-    <body>
-        <!-- header design -->
-         <header class="header">
-            <a href="#" class="logo"> MoTaha <span class="animate" style="--i:1;"></span></a>
-            <div class="bx bx-menu" id="menu-icon">
-                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-            </div>
-    
-            <nav class="navbar">
-                <a href="file:///C:/Users/HP/Downloads/Wb/index1.html#home" class="active">Home</a>
-                <a href="file:///C:/Users/HP/Downloads/Wb/index1.html#about">About</a>
-                <a href="file:///C:/Users/HP/Downloads/Wb/index1.html#courses">Courses</a>
-                <a href="file:///C:/Users/HP/Downloads/Wb/index1.html#contact">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="UIbtn"><a href="file:///C:/xampp/htdocs/programming/Login.html#">Sign In</a></button>
-    
-                <span class="active-nav"></span>
-                <span class="animate" style="--i:2;"></span>
-            </nav>
-         </header>
-</body>
-<body>
-     <!--page1-->
-    <section>
-    <div class="login-box" id="login_box">
-        <form id="login-form" action="login.php" method="post">
-            <h2>Login</h2>
-            <div id="errorMessage"></div> <!-- Error message element -->
-            <div id="successMessage"></div> <!-- Success message element -->
-            <!-- Rest of the login form -->
-            <div class="input-box">
-                <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input type="email" id="email" required>
-                <label>Email</label>
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" id="password" required>
-                <label>Password</label>
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox">remember me</label>
-                <a href="Fpassword.html">Forgot Password?</a>
-            </div>
-            <button type="submit" id="login-btn">Login</button>
-            <div id="error-message"></div>
-            <script>
-                document.getElementById("login-btn").addEventListener("click", LoginUser);
-            </script>
-            <div class="register-link">
-                <p>Don't have an account?<a href="Register.html">  Register</a></p>
-            </div>
-        </form>
         <?php
 // Handle the login form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -105,8 +42,3 @@ function validateEmailPassword($email, $password) {
   });
 }
 ?>
-</section>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
