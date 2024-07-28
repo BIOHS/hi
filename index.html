@@ -33,7 +33,7 @@
      <!--page1-->
     <section>
     <div class="login-box" id="login_box">
-        <form id="login-form" action="login.php" method="post">
+        <form id="login-form" action="in.html" method="post">
             <h2>Login</h2>
             <div id="errorMessage"></div> <!-- Error message element -->
             <div id="successMessage"></div> <!-- Success message element -->
@@ -62,6 +62,35 @@
             </div>
         </form>
     </section>
+    <?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  // Validate the email and password
+  if (validateEmailPassword($email, $password)) {
+    // Create a new session
+    $_SESSION['email'] = $email;
+    // Redirect to the dashboard or home page
+    header('Location: dashboard.php');
+    exit;
+  } else {
+    // Display an error message
+    echo 'Invalid email or password';
+  }
+}
+
+function validateEmailPassword($email, $password) {
+  // Your validation logic here
+  // For example:
+  $validCredentials = [
+    ['email' => 'g@g', 'password' => 'g'],
+    ['email' => 's@s', 'password' => 's'],
+    ['email' => 'z@z', 'password' => 'z'],
+  ];
+?>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
